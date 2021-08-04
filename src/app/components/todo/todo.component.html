@@ -1,0 +1,12 @@
+<h1>Este es el componente Todo</h1>
+<div *ngFor="let todo of todoList; let id = index" class="todo">
+  <h3>{{ todo.titulo }}</h3>
+  <p>{{ todo.descripcion }}</p>
+  <i>{{ todo.autor }}</i>
+  <br />
+  <span>
+    Creado: {{ todo.creado | date: "y-m-d" }}, hasta
+    {{ todo.fin | date: "y-m-d" }}
+  </span>
+  <button type="button" (click)="borrarTodo(id)">Borrar</button>
+</div>
