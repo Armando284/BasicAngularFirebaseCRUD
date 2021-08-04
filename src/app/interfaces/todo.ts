@@ -4,5 +4,5 @@ export interface Todo {
   descripcion: string;
   autor: string;
   creado: Date;
-  fin: Date;
+  hasta: Date;
 }

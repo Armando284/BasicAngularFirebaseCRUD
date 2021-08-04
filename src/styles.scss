@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --alert-color: crimson;
+  --black-text: #333;
+  --delete-bg: hsl(0, 87%, 54%);
+  --delete-border: hsl(0, 83%, 21%);
+  --delete-bg-h: hsl(0, 66%, 41%);
+  --delete-border-h: hsl(0, 66%, 10%);
+  --edit-bg: hsl(221, 87%, 54%);
+  --edit-border: hsl(221, 83%, 21%);
+  --edit-bg-h: hsl(221, 66%, 41%);
+  --edit-border-h: hsl(221, 66%, 10%);
+  --acept-bg: hsl(140, 87%, 30%);
+  --acept-border: hsl(140, 83%, 21%);
+  --acept-bg-h: hsl(140, 66%, 20%);
+  --acept-border-h: hsl(140, 66%, 10%);
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black-text);
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 100px 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: var(--black-text) 0 0 1px;
+}
+.text-center {
+  text-align: center;
+}
+.no-todo-found {
+  color: var(--alert-color);
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+.todo {
+  margin: 20px;
+  padding: 15px;
+  background: #fff;
+  border: var(--black-text) 1px solid;
+  border-radius: 1rem;
+  transition: all 0.5s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+}
+.todo:hover,
+.todo:focus {
+  transform-origin: bottom;
+  transform: scale(1.1) translateY(5px);
+  box-shadow: rgba(0, 0, 0, 0.5) 0 5px 15px;
+}
+.btn {
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn-delete {
+  color: #fff;
+  background: var(--delete-bg);
+  border: var(--delete-border) 1px solid;
+}
+.btn-delete:hover,
+.btn-delete:focus {
+  color: #bbb;
+  background: var(--delete-bg-h);
+  border: var(--delete-border-h) 1px solid;
+}
+.btn-edit {
+  color: #fff;
+  background: var(--edit-bg);
+  border: var(--edit-border) 1px solid;
+}
+.btn-edit:hover,
+.btn-edit:focus {
+  color: #bbb;
+  background: var(--edit-bg-h);
+  border: var(--edit-border-h) 1px solid;
+}
+.btn-acept {
+  color: #fff;
+  background: var(--acept-bg);
+  border: var(--acept-border) 1px solid;
+}
+.btn-acept:hover,
+.btn-acept:focus {
+  color: #bbb;
+  background: var(--acept-bg-h);
+  border: var(--acept-border-h) 1px solid;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.form-control {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  min-height: 30px;
+  padding: 5px 5px;
+  border-radius: 0.5rem;
+  border: var(--edit-bg) 1px solid;
+  transition: all 0.3s ease-in-out;
+}
+.form-control-full-w {
+  width: calc(100% - 10px);
+}
+.form-control:focus-visible {
+  outline-offset: 2px !important;
+  outline: rgba(36, 79, 174, 0.3) auto 10px !important;
+  outline-style: groove;
+}

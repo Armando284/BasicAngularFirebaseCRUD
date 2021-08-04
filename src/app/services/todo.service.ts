@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../interfaces/todo';
+import { Todos } from '../testBD';
 
 @Injectable({
   providedIn: 'root'
@@ -32,27 +33,4 @@ export class TodoService {
   }
 }
 
-//imagina que esto viene del backend
-const Todos: Todo[] = [
-  {
-    titulo: 'Primera tarea',
-    descripcion: 'Esta es la primera tarea de prueba',
-    autor: 'Armando P. Tamayo',
-    creado: new Date(),
-    fin: new Date('2021-08-31')
-  },
-  {
-    titulo: 'Segunda tarea',
-    descripcion: 'Esta es la segunda tarea de prueba',
-    autor: 'Armando P. Tamayo',
-    creado: new Date(),
-    fin: new Date('2021-08-31')
-  },
-  {
-    titulo: 'Tercera tarea',
-    descripcion: 'Esta es la tercera tarea de prueba',
-    autor: 'Armando P. Tamayo',
-    creado: new Date(),
-    fin: new Date('2021-08-31')
-  },
-];
+

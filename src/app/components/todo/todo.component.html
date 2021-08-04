@@ -1,4 +1,7 @@
-<h1>Este es el componente Todo</h1>
+<h1 class="text-center">Lista de tareas</h1>
+<small *ngIf="!todoList.length" class="no-todo-found"
+  >No hay tareas que mostrar.</small
+>
 <div *ngFor="let todo of todoList; let id = index" class="todo">
   <h3>{{ todo.titulo }}</h3>
   <p>{{ todo.descripcion }}</p>
@@ -6,7 +9,73 @@
   <br />
   <span>
     Creado: {{ todo.creado | date: "y-m-d" }}, hasta
-    {{ todo.fin | date: "y-m-d" }}
+    {{ todo.hasta | date: "y-m-d" }}
   </span>
-  <button type="button" (click)="borrarTodo(id)">Borrar</button>
+  <div class="buttons">
+    <button class="btn btn-edit" type="button" (click)="deleteTodo(id)">
+      Editar
+    </button>
+    <button class="btn btn-delete" type="button" (click)="deleteTodo(id)">
+      Borrar
+    </button>
+  </div>
+</div>
+<div class="todo">
+  <form
+    [formGroup]="todoForm"
+    (ngSubmit)="createSubmit()"
+    autocomplete="off"
+    novalidate
+  >
+    <div>
+      <input
+        formControlName="titulo"
+        class="form-control form-control-full-w"
+        type="text"
+        placeholder="Titulo"
+        autofocus
+      />
+    </div>
+    <div>
+      <textarea
+        formControlName="descripcion"
+        class="form-control form-control-full-w"
+        name=""
+        id=""
+        cols="60"
+        rows="5"
+        placeholder="Descripcion"
+      ></textarea>
+    </div>
+    <div>
+      <input
+        formControlName="autor"
+        class="form-control form-control-full-w"
+        type="text"
+        placeholder="Autor"
+      />
+    </div>
+    <div>
+      <label for="creado"
+        >Creado:
+        <input
+          formControlName="creado"
+          class="form-control"
+          name="creado"
+          type="datetime-local"
+        />,
+      </label>
+      <label for="hasta"
+        >hasta:
+        <input
+          formControlName="hasta"
+          class="form-control"
+          name="hasta"
+          type="datetime-local"
+      /></label>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-acept" type="submit">Aceptar</button>
+    </div>
+  </form>
 </div>
